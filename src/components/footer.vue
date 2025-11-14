@@ -1,22 +1,15 @@
 <template>
   <footer class="bg-[#122945] text-white py-16">
-    
-    <!-- FOOTER CONTENT WRAPPER (biar tidak terlalu lebar) -->
     <div class="max-w-6xl mx-auto px-6">
-      
-      <!-- GRID 3 KOLOM -->
       <div class="grid md:grid-cols-3 gap-12">
-        
-        <!-- BRAND -->
+
         <div>
           <h3 class="text-lg font-semibold mb-3">Melodia</h3>
           <p class="text-sm text-gray-300 leading-relaxed">
-            Melodia adalah toko musik terpercaya yang menyediakan instrumen 
-            berkualitas tinggi untuk musisi pemula hingga profesional.
+            Melodia is a trusted music store that provides high-quality instruments for musicians ranging from beginners to professionals.
           </p>
         </div>
 
-        <!-- NAVIGATION -->
         <div>
           <h4 class="text-lg font-semibold mb-3">Navigation</h4>
           <ul class="space-y-2 text-sm text-gray-300">
@@ -28,14 +21,13 @@
           </ul>
         </div>
 
-        <!-- CONTACT -->
         <div>
           <h4 class="text-lg font-semibold mb-3">Contact</h4>
           <ul class="space-y-2 text-sm text-gray-300">
             <li>Email: <span class="hover:text-emerald-400 cursor-pointer">melodia911@gmail.com</span></li>
             <li>Phone: <span class="hover:text-emerald-400 cursor-pointer">0811-2222-3333</span></li>
             <li>Instagram: <span class="hover:text-emerald-400 cursor-pointer">@melodiastoregacor99</span></li>
-            <li>Location: Jakarta, Indonesia</li>
+            <li>Location: Wakanda Selatan, Wakanda</li>
           </ul>
         </div>
       </div>
@@ -48,5 +40,3 @@
 
   </footer>
 </template>
-
-<script setup></script>

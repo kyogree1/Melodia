@@ -1,58 +1,39 @@
 <template>
   <header class="w-full bg-[#0e2036] px-14 py-5 flex items-center justify-between">
 
-    <!-- LOGO -->
     <div class="flex items-center gap-3">
       <i class="fa-solid fa-music text-teal-400 text-3xl"></i>
       <span class="text-white text-2xl font-semibold tracking-wide">Melodia</span>
     </div>
 
-    <!-- NAVIGATION MENU (Desktop) -->
     <nav class="hidden lg:block">
       <ul class="flex items-center gap-10 bg-white px-10 py-3 rounded-full shadow-lg">
 
         <li>
-          <a
-            href="/"
-            :class="active === 'home' ? activeClass : defaultClass"
-          >
+          <a href="/":class="active === 'home' ? activeClass : defaultClass">
             Home
           </a>
         </li>
 
         <li>
-          <a
-            href=""
-            :class="active === 'catalog' ? activeClass : defaultClass"
-          >
+          <a href="" :class="active === 'catalog' ? activeClass : defaultClass">
             Catalog
           </a>
         </li>
 
-        <!-- ABOUT -->
         <li>
-          <a
-            href=""
-            :class="active === 'about' ? activeClass : defaultClass"
-          >
+          <a href="":class="active === 'about' ? activeClass : defaultClass">
             About
           </a>
         </li>
 
         <li>
-          <a
-            href=""
-            :class="active === 'order' ? activeClass : defaultClass"
-          >
-            Order
+          <a href="" :class="active === 'order' ? activeClass : defaultClass" >Order
           </a>
         </li>
 
         <li>
-          <a
-            href="/contact"
-            :class="active === 'contact' ? activeClass : defaultClass"
-          >
+          <a href="/contact" :class="active === 'contact' ? activeClass : defaultClass">
             Contact
           </a>
         </li>
@@ -60,10 +41,7 @@
       </ul>
     </nav>
 
-    <button
-      class="hidden lg:flex bg-white p-4 rounded-full shadow-md 
-            hover:bg-gray-100 transition items-center justify-center"
-    >
+    <button class="hidden lg:flex bg-white p-4 rounded-full shadow-md hover:bg-gray-100 transition items-center justify-center">
       <img
         src="../assets/image/online-shopping.png"
         alt="cart icon"

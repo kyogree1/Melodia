@@ -8,17 +8,14 @@
         </h2>
 
         <p class="text-gray-600 mb-6 leading-relaxed text-justify">
-          Melodia adalah platform penyedia instrumen musik premium yang menghadirkan
-          pengalaman berbelanja modern bagi musisi dari berbagai kalangan. Kami menghadirkan
-          alat musik berkualitas tinggi yang dipilih secara selektif untuk memenuhi kebutuhan
-          profesional maupun pemula.
+          Melodia is a platform that provides premium musical instruments, offering a modern shopping experience for musicians from all backgrounds. We deliver high-quality instruments that are carefully selected to meet the needs of both professionals and beginners.
         </p>
 
         <p class="text-gray-600 leading-relaxed text-justify">
-          Dengan komitmen pada kualitas, keaslian produk, dan pelayanan yang terpercaya,
-          Melodia terus berkembang sebagai toko musik yang dapat diandalkan. Visi kami adalah
-          menghubungkan para musisi dengan instrumen terbaik yang dapat menginspirasi kreativitas,
-          meningkatkan performa, dan membawa pengalaman musik ke level yang lebih tinggi.
+          With a commitment to quality, product authenticity, and reliable service,
+          Melodia continues to grow as a trusted music store.
+          Our vision is to connect musicians with the best instruments that inspire creativity,
+          enhance performance, and elevate the musical experience to a higher level.
         </p>
       </div>
 
@@ -33,5 +30,3 @@
     </div>
   </section>
 </template>
-
-<script setup></script>
