@@ -24,4 +24,6 @@ defineProps({
   placeholder: String,
   type: { type: String, default: "text" }
 });
+
+defineEmits(["update:modelValue"]);
 </script>
