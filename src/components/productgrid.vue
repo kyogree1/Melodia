@@ -19,7 +19,7 @@
 
 
 <script setup>
-import ProductCard from "./Card.vue"
+import ProductCard from "./card.vue"
 import { computed } from "vue"
 
 const props = defineProps({

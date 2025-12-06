@@ -1,13 +1,13 @@
-<template>
-    <div class="w-full bg-[#f3f0ef] flex flex-col">
-      <Header active="catalog"/>
-      <HeroCatalog />
-      <catalogbar v-model:active="selectedCategory"/>
-      <catalogsearch />
-      <ProductGrid :category="selectedCategory" />
-      <Footer />
-    </div>
-</template>
+  <template>
+      <div class="w-full bg-[#f3f0ef] flex flex-col">
+        <Header active="catalog"/>
+        <HeroCatalog />
+        <catalogbar v-model:active="selectedCategory"/>
+        <catalogsearch />
+        <ProductGrid :category="selectedCategory" />
+        <Footer />
+      </div>
+  </template>
 
 <script setup>
 import Header from '../components/Header.vue'

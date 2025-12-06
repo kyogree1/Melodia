@@ -3,7 +3,11 @@
     <div class="w-full bg-white flex flex-col">
 
       <Header active="about" />
-      <heroabout />
+      <heroabout 
+      image="../assets/image/logomelodia.png"
+      title="About Melodia"
+      description="Since 1800, Melodia has been a trusted destination for musicians around the world — offering premium instruments and accessories that inspire creativity and elevate every performance. We are dedicated to helping artists find their sound, no matter where their journey begins.  "
+      />
 
       <section class="bg-[#e6f7f4] px-8 py-20">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
@@ -135,17 +139,13 @@
 
     </div>
     </section>
-
-
-
-      <Footer />
-
+    <Footer />
     </div>
   </div>
 </template>
 
 <script setup>
 import Header from '../components/Header.vue'
-import heroabout from '../components/heroabout.vue'
+import heroabout from '../components/hero.vue'
 import Footer from '../components/footer.vue'
 </script>

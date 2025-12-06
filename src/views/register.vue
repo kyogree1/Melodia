@@ -65,21 +65,6 @@ const email = ref("");
 const password = ref("");
 
 const handleRegister = () => {
-  // Contoh validasi sederhana
-  if (!name.value || !email.value || !password.value) {
-    alert("All fields must be filled!");
-    return;
-  }
-
-  console.log("Register Data:", name.value, email.value, password.value);
-
-  // Simpan data dummy jika mau
-  localStorage.setItem("registeredUser", JSON.stringify({
-    name: name.value,
-    email: email.value
-  }));
-
-  // Redirect ke login
   router.push("/login");
 };
 </script>

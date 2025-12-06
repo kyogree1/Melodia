@@ -1,7 +1,11 @@
 <template>
   <div class="min-h-screen bg-[#E8FAF3]">
     <Header active="contact" />
-    <ContactHero />
+    <ContactHero
+      image="../assets/image/package.png"
+      title="Contact Information"
+      description="Have any questions? Our team is ready to help you find the perfect instrument."
+    />
 
     <section class="py-16 px-6">
       <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -105,7 +109,7 @@ import { ref } from "vue";
 
 import Header from "../components/Header.vue";
 import Footer from "../components/footer.vue";
-import ContactHero from "../components/herocontact.vue";
+import ContactHero from "../components/hero.vue";
 import TextInput from "../components/textinput.vue";
 import TextArea from "../components/textarea.vue";
 

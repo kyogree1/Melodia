@@ -58,12 +58,6 @@ const password = ref("");
 const router = useRouter();
 
 const handleLogin = () => {
-  // dummy validation
-  if (email.value.trim() === "" || password.value.trim() === "") {
-    alert("Email & Password must not be empty!");
-    return;
-  }
-
   // save login session
   localStorage.setItem("loggedIn", "true");
 
@@ -71,5 +65,6 @@ const handleLogin = () => {
 
   // redirect ke home
   router.push("/home");
+  return;
 };
 </script>
