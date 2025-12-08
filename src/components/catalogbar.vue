@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full max-w-6xl mx-auto flex justify-start -mt-8 relative z-[999]">
+  <div class="w-full max-w-6xl mx-auto flex justify-start -mt-8 relative">
     <ul
       class="bg-white inline-flex rounded-2xl shadow-lg p-4 gap-3 
              overflow-x-auto scroll-smooth

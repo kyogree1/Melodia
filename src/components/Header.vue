@@ -18,20 +18,25 @@
       </ul>
 
     <!-- CART BUTTON -->
-    <button
-      class="bg-gradient-to-b from-[#192642] via-[#138d7d] to-[#30c46f] 
-            h-10 w-10 rounded-full flex items-center justify-center
-            text-white shadow-md">
+    <RouterLink 
+      to="/cart"
+      :class="props.active === 'cart'
+                ? 'bg-emerald-500 text-white h-10 w-10 rounded-full flex items-center justify-center shadow-sm'
+                : 'bg-white text-black border border-gray-300 h-10 w-10 rounded-full flex items-center justify-center shadow-sm hover:bg-gray-100'"
+    >
       <ShoppingCart class="h-5 w-5" />
-    </button>
+    </RouterLink>
+
 
     <!-- PROFILE ICON -->
-    <button
-      class="bg-gradient-to-b from-[#192642] via-[#138d7d] to-[#30c46f]
-            h-10 w-10 rounded-full flex items-center justify-center
-            text-white shadow-md">
+    <RouterLink
+      to="/profile"
+      class="bg-white h-10 w-10 rounded-full flex items-center justify-center
+            text-black shadow-md hover:bg-gray-100 transition"
+    >
       <User class="h-5 w-5" />
-    </button>
+    </RouterLink>
+
 
     </nav>
 
@@ -45,15 +50,16 @@
     <!-- MOBILE MENU OVERLAY -->
     <div
       v-if="mobileOpen"
-      class="fixed inset-0 bg-black/50 z-40"
+      class="fixed inset-0 bg-black/50 z-[99999]"
       @click="mobileOpen = false"
     ></div>
 
+
     <!-- MOBILE MENU DRAWER -->
     <div
-      class="fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-xl p-6 transform transition-all"
-      :class="mobileOpen ? 'translate-x-0' : 'translate-x-full'"
-    >
+        class="fixed top-0 right-0 h-full w-64 bg-white z-[100000] shadow-xl p-6 
+              transform transition-transform"
+        :class="mobileOpen ? 'translate-x-0' : 'translate-x-full'">
       <div class="flex justify-between items-center mb-6">
         <h2 class="text-lg font-semibold text-gray-700">Menu</h2>
         <button @click="mobileOpen = false">
@@ -63,34 +69,35 @@
 
       <!-- LIST MENU (PROFILE FIRST) -->
       <ul class="space-y-4 text-gray-700">
-
-        <li class="flex items-center gap-3 font-medium cursor-pointer">
-          <User class="h-4 w-4" />
-          Profile
+        <li>
+          <router-link 
+            to="/profile"
+            @click="closeMobile"
+            class="flex items-center gap-3 font-medium text-gray-700 hover:text-emerald-500 transition"
+          >
+            <User class="h-4 w-4" />
+            Profile
+          </router-link>
         </li>
 
-        <li class="flex items-center gap-3 font-medium cursor-pointer">
-          <ShoppingCart class="h-4 w-4" />
-          Order
+        <li>
+          <router-link 
+            to="/cart" 
+            @click="closeMobile"
+            class="flex items-center gap-3 font-medium text-gray-700 hover:text-emerald-500 transition"
+          >
+            <ShoppingCart class="h-4 w-4" />
+            Cart
+          </router-link>
         </li>
-
         <!-- NAVBAR ITEMS -->
         <li><router-link @click="closeMobile" to="/home">Home</router-link></li>
         <li><router-link @click="closeMobile" to="/catalog">Catalog</router-link></li>
         <li><router-link @click="closeMobile" to="/about">About</router-link></li>
         <li><router-link @click="closeMobile" to="/order">Order</router-link></li>
         <li><router-link @click="closeMobile" to="/contact">Contact</router-link></li>
-
-        <hr class="my-2">
-
-        <li class="flex items-center gap-3 text-red-600 cursor-pointer">
-          <LogOut class="h-4 w-4" />
-          Logout
-        </li>
-
       </ul>
     </div>
-
   </header>
 </template>
 
