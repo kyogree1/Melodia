@@ -14,18 +14,26 @@
         Crafted for dreamers, designed for musicians.
       </p>
 
-      <button class="group mt-10 bg-white text-black flex items-center justify-between px-6 py-4 rounded-xl w-full md:w-[600px] shadow-lg text-base font-medium transition">
+      <!-- FIXED: Now router navigates to /catalog -->
+      <RouterLink
+        to="/catalog"
+        class="group mt-10 bg-white text-black flex items-center justify-between 
+               px-6 py-4 rounded-xl w-full md:w-[600px] shadow-lg text-base 
+               font-medium transition"
+      >
         Discover Our Collection
 
-        <span class="h-9 w-9 bg-black rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
+        <span
+          class="h-9 w-9 bg-black rounded-full flex items-center justify-center 
+                 transition-transform duration-300 group-hover:translate-x-1"
+        >
           <img
             src="../assets/image/right-arrow.png"
             alt="arrow icon"
             class="w-4 h-4 invert"
           />
         </span>
-      </button>
-
+      </RouterLink>
     </div>
   </section>
 </template>

@@ -4,7 +4,7 @@
 
       <img 
         class="mx-auto h-12"
-        src="/src/assets/image/logomelodia.png"
+        src="/src/assets/image/aboutmelodia.png"
         alt="Melodia"
       />
 

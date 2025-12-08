@@ -4,7 +4,7 @@
 
       <Header active="about" />
       <heroabout 
-      image="../assets/image/logomelodia.png"
+      image="../assets/image/aboutmelodia.png"
       title="About Melodia"
       description="Since 1800, Melodia has been a trusted destination for musicians around the world — offering premium instruments and accessories that inspire creativity and elevate every performance. We are dedicated to helping artists find their sound, no matter where their journey begins.  "
       />
