@@ -7,18 +7,16 @@
       <!-- Icon -->
       <div class="flex justify-center mb-4">
         <img
-          :src="resolvedImage"
+          :src="props.image"
           :alt="title"
-          class="w-16 h-16"
+          class="w-16 h-16 object-contain"
         />
       </div>
 
-      <!-- Title -->
       <h1 class="text-4xl md:text-5xl font-bold mb-4">
         {{ title }}
       </h1>
 
-      <!-- Subtitle -->
       <p class="text-base md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto">
         {{ description }}
       </p>
@@ -29,20 +27,8 @@
 
 <script setup>
 const props = defineProps({
-  image: {
-    type: String,
-    required: true
-  },
-  title: {
-    type: String,
-    default: ""
-  },
-  description: {
-    type: String,
-    default: ""
-  }
+  image: String,
+  title: String,
+  description: String
 })
-
-// otomatis resolve path dari folder /assets
-const resolvedImage = new URL(props.image, import.meta.url).href
 </script>

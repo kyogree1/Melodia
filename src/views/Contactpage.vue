@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-[#E8FAF3]">
     <Header active="contact" />
     <ContactHero
-      image="../assets/image/package.png"
+      :image="ContactImg"
       title="Contact Information"
       description="Have any questions? Our team is ready to help you find the perfect instrument."
     />
@@ -112,6 +112,7 @@ import Footer from "../components/footer.vue";
 import ContactHero from "../components/hero.vue";
 import TextInput from "../components/textinput.vue";
 import TextArea from "../components/textarea.vue";
+import ContactImg from '../assets/image/contact.png';
 
 const name = ref("");
 const email = ref("");

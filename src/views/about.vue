@@ -4,7 +4,7 @@
 
       <Header active="about" />
       <heroabout 
-      image="../assets/image/aboutmelodia.png"
+      :image="aboutImg"
       title="About Melodia"
       description="Since 1800, Melodia has been a trusted destination for musicians around the world — offering premium instruments and accessories that inspire creativity and elevate every performance. We are dedicated to helping artists find their sound, no matter where their journey begins.  "
       />
@@ -148,4 +148,6 @@
 import Header from '../components/Header.vue'
 import heroabout from '../components/hero.vue'
 import Footer from '../components/footer.vue'
+import aboutImg from '../assets/image/aboutmelodia.png'
+
 </script>
