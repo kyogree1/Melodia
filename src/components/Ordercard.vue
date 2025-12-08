@@ -21,31 +21,31 @@
       <div class="px-6 py-6 space-y-6">
 
         <!-- CUSTOMER + SHIPPING -->
-        <div class="grid grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
           <!-- CUSTOMER INFO -->
-          <div>
+          <div class="flex flex-col">
             <h3 class="font-semibold text-gray-700 mb-2">Customer Information</h3>
 
             <p class="font-bold text-gray-900">Noel Gallagher</p>
-            <p class="text-gray-600 text-sm">noelgallagher@gmail.com</p>
+            <p class="text-gray-600 text-sm break-all">noelgallagher@gmail.com</p>
             <p class="text-gray-600 text-sm">1234355-12-10</p>
           </div>
 
-            <!-- SHIPPING -->
-            <div>
+          <!-- SHIPPING -->
+          <div class="flex flex-col">
             <h3 class="font-semibold text-gray-700 mb-2">Shipping Address</h3>
 
-            <p class="text-gray-800 font-bold leading-tight">
-                Indonesia
+            <p class="text-gray-900 font-bold leading-tight">Indonesia</p>
+            <p class="text-gray-600 text-sm leading-tight mt-1 break-all">
+              Alamat: Jl. apaAjalah
             </p>
+          </div>
 
-            <p class="text-gray-600 text-sm leading-tight mt-1">
-                Alamat: Jl. apaAjalah
-            </p>
-            </div>
         </div>
+
         <hr class="border-gray-300" />
+
         <!-- ORDER DETAIL -->
         <div>
           <h3 class="font-semibold text-gray-700 mb-2">Order Detail</h3>
@@ -56,11 +56,11 @@
           </div>
 
           <p class="text-gray-600 text-sm">Qty: 1</p>
-
         </div>
 
         <hr class="border-gray-300" />
-        
+
+        <!-- TOTAL -->
         <div class="flex justify-between font-semibold text-gray-900">
           <span>Total Amount</span>
           <span>Rp 13.000.000</span>
