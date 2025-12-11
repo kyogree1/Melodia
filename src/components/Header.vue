@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full bg-[#0e2036] px-6 py-5 flex items-center justify-between width-screen">
+  <header class="w-full bg-[#0e2036] px-6 py-5 flex items-center justify-between">
 
     <div class="flex items-center gap-3">
       <span class="text-white text-2xl font-semibold tracking-wide">Melodia</span>

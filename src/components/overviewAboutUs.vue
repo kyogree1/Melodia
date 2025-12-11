@@ -26,7 +26,7 @@
         <img
           src="../assets/image/noel-gallagher.jpg"
           alt="Melodia Artist"
-          class="w-72 h-72 object-cover rounded-3xl shadow-xl"
+          class="w-72 h-72 object-cover rounded-3xl shadow-xl hidden md:block"
           >
       </div>
 
