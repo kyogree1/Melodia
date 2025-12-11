@@ -55,10 +55,10 @@
 
 <script setup>
 import { ref } from "vue";
-import { useRouter } from "vue-router";   // ⬅ WAJIB agar bisa redirect
+import { useRouter } from "vue-router";
 import textinput from "../components/textinput.vue";
 
-const router = useRouter(); // ⬅ ambil router
+const router = useRouter(); 
 
 const name = ref("");
 const email = ref("");

@@ -3,7 +3,7 @@
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
       <div>
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+        <h2 class="t font-bold text-gray-900 mb-4">
           Store Overview
         </h2>
 

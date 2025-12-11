@@ -14,4 +14,6 @@ import Header from '../components/Header.vue'
 import Herohome from '../components/herohome.vue'
 import Overview from '../components/overview.vue'
 import Footer from '../components/footer.vue'
+
+
 </script>

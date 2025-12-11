@@ -1,7 +1,5 @@
 <template>
-  <div class="min-h-screen bg-[#111111] flex justify-center">
-    <div class="w-full bg-white flex flex-col">
-
+    <div>
       <Header active="about" />
       <heroabout 
       :image="aboutImg"
@@ -82,7 +80,6 @@
 </section>
 
 
-
         <!-- WHY CHOOSE US -->
     <section class="px-8 py-20 bg-white">
     <div class="max-w-6xl mx-auto bg-[#0e9778] text-white p-10 rounded-3xl">
@@ -141,7 +138,6 @@
     </section>
     <Footer />
     </div>
-  </div>
 </template>
 
 <script setup>

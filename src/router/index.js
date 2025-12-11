@@ -8,6 +8,7 @@
     import OrderPage from "../views/order.vue";
     import CartPage from "../views/cart.vue";
     import ProfilePage from "../views/Profilepage.vue";
+    import AboutMe from "../views/aboutme.vue"
 
     const routes = [
         {path: "/", redirect: "/login" },
@@ -20,6 +21,7 @@
         { path: "/register", name: "Register", component: RegisterPage },
         { path: "/cart", name: "Cart", component: CartPage },
         { path: "/profile", name: "Profile", component: ProfilePage },
+        { path: "/aboutme", name: "AboutMe", component: AboutMe }
     ];
 
     const router = createRouter({

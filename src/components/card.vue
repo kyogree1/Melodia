@@ -42,7 +42,8 @@
     brand: String,
     title: String,
     price: String,
-    stock: Number
+    stock: Number,
+    skill: String
   });
 
   const localImage = computed(() =>

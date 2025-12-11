@@ -1,13 +1,12 @@
 <template>
-  <header class="w-full bg-[#0e2036] px-6 py-5 flex items-center justify-between">
+  <header class="w-full bg-[#0e2036] px-6 py-5 flex items-center justify-between width-screen">
 
     <div class="flex items-center gap-3">
-      <i class="fa-solid fa-music text-teal-400 text-3xl"></i>
       <span class="text-white text-2xl font-semibold tracking-wide">Melodia</span>
     </div>
 
     <!-- DESKTOP NAVIGATION -->
-    <nav class="hidden lg:flex items-center gap-6">
+    <nav class="hidden md:flex items-center gap-6">
 
       <ul class="flex items-center gap-10 bg-white px-10 py-3 rounded-full shadow-lg">
         <li><router-link to="/home" :class="checkActive('home')">Home</router-link></li>
@@ -15,6 +14,7 @@
         <li><router-link to="/about" :class="checkActive('about')">About</router-link></li>
         <li><router-link to="/order" :class="checkActive('order')">Order</router-link></li>
         <li><router-link to="/contact" :class="checkActive('contact')">Contact</router-link></li>
+        <li><router-link to="/aboutme" :class="checkActive('aboutme')">AboutMe</router-link></li>
       </ul>
 
     <!-- CART BUTTON -->
@@ -56,7 +56,7 @@
 
 
     <!-- MOBILE MENU DRAWER -->
-    <div
+      <div
         class="fixed top-0 right-0 h-full w-64 bg-white z-[100000] shadow-xl p-6 
               transform transition-transform"
         :class="mobileOpen ? 'translate-x-0' : 'translate-x-full'">
@@ -93,9 +93,11 @@
         <!-- NAVBAR ITEMS -->
         <li><router-link @click="closeMobile" to="/home">Home</router-link></li>
         <li><router-link @click="closeMobile" to="/catalog">Catalog</router-link></li>
-        <li><router-link @click="closeMobile" to="/about">About</router-link></li>
+        <li><router-link @click="closeMobile" to="/about">AboutUs</router-link></li>
         <li><router-link @click="closeMobile" to="/order">Order</router-link></li>
         <li><router-link @click="closeMobile" to="/contact">Contact</router-link></li>
+        <li><router-link @click="closeMobile" to="/AboutMe">AboutMe</router-link> </li>
+
       </ul>
     </div>
   </header>
@@ -103,7 +105,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { ShoppingCart, User, LogOut, Menu, X } from "lucide-vue-next";
+import { ShoppingCart, User, Menu, X } from "lucide-vue-next";
 
 const props = defineProps({ active: String });
 const mobileOpen = ref(false);

@@ -31,27 +31,66 @@
 
           <div class="flex justify-between font-semibold text-emerald-600 mt-3 border-t pt-2">
             <span>Total</span>
-            <!-- FIX 1: props.total -->
             <span>Rp {{ format(props.total) }}</span>
           </div>
         </section>
 
         <!-- FORM -->
-        <TextInput label="Your Full Name" v-model="form.name" placeholder="enter your full name" />
-        <TextInput label="Email" v-model="form.email" placeholder="email@example.com" type="email" />
-        <TextInput label="Phone Number" v-model="form.phone" placeholder="08xxxxxxxxxx" type="tel" />
-        <TextArea label="Address" v-model="form.address" placeholder="enter your full address" rows="4" />
+        <div>
+          <TextInput 
+            label="Your Full Name *" 
+            v-model="form.name" 
+            :error="errors.name"
+            placeholder="enter your full name" 
+          />
+        </div>
+
+        <div>
+          <TextInput 
+            label="Email *" 
+            v-model="form.email"
+            :error="errors.email" 
+            placeholder="email@example.com" 
+            type="email" 
+          />
+        </div>
+
+        <div>
+          <TextInput 
+            label="Phone Number *" 
+            v-model="form.phone"
+            :error="errors.phone" 
+            placeholder="08xxxxxxxxxx" 
+            type="tel" 
+          />
+        </div>
+
+        <div>
+          <TextArea 
+            label="Address *" 
+            v-model="form.address" 
+            :error="errors.address"
+            placeholder="enter your full address" 
+            rows="4" 
+          />
+        </div>
 
         <!-- PAYMENT METHOD -->
         <section>
-          <h3 class="font-medium text-gray-700 mb-2">Payment Method</h3>
-            <div 
+          <h3 class="font-medium text-gray-700 mb-2">Payment Method *</h3>
+
+          <p v-if="errors.payment" class="text-red-500 text-xs mb-1">{{ errors.payment }}</p>
+
+          <div 
             v-for="method in paymentOptions"
             :key="method.value"
             class="border rounded-lg p-4 mt-2 cursor-pointer hover:bg-gray-50"
-            :class="{ 'ring-2 ring-emerald-500': form.payment === method.value }"
-            @click="form.payment = method.value"
-            >
+            :class="{ 
+              'ring-2 ring-emerald-500': form.payment === method.value,
+              'border-red-500': errors.payment 
+            }"
+            @click="form.payment = method.value; errors.payment = ''"
+          >
             <div class="flex items-center gap-3">
                 <i :class="method.icon" class="text-lg"></i>
 
@@ -60,7 +99,7 @@
                 <span class="text-xs text-gray-500">{{ method.desc }}</span>
                 </div>
             </div>
-            </div>
+          </div>
         </section>
 
       </div>
@@ -76,7 +115,7 @@
 
         <button 
           class="px-6 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600"
-          @click="confirm()"
+          @click="validateForm"
         >
           Confirm Purchase
         </button>
@@ -111,14 +150,56 @@ const form = reactive({
   payment: ""
 })
 
-const paymentOptions = [
-  { value: "bank", label: "Transfer Bank", desc: "BCA, Mandiri, BNI, BRI", icon: "fa-solid fa-building-columns" },
-  { value: "ewallet", label: "E-Wallet", desc: "GoPay, OVO, DANA, ShopeePay", icon: "fa-solid fa-wallet" },
-  { value: "card", label: "Kartu Kredit/Debit", desc: "Visa, Mastercard, JCB", icon: "fa-solid fa-credit-card" },
-  { value: "cod", label: "Cash on Delivery", desc: "Bayar saat barang diterima", icon: "fa-solid fa-money-bill-wave" },
-]
+// error messages
+const errors = reactive({
+  name: "",
+  email: "",
+  phone: "",
+  address: "",
+  payment: ""
+})
 
-function confirm() {
+function validateForm() {
+  let valid = true;
+
+  // Reset errors
+  errors.name = "";
+  errors.email = "";
+  errors.phone = "";
+  errors.address = "";
+  errors.payment = "";
+
+  if (!form.name.trim()) {
+    errors.name = "Full name is required.";
+    valid = false;
+  }
+  if (!form.email.trim()) {
+    errors.email = "Email is required.";
+    valid = false;
+  }
+  if (!form.phone.trim()) {
+    errors.phone = "Phone number is required.";
+    valid = false;
+  }
+  if (!form.address.trim()) {
+    errors.address = "Address is required.";
+    valid = false;
+  }
+  if (!form.payment) {
+    errors.payment = "Please select a payment method.";
+    valid = false;
+  }
+
+  if (!valid) return;
+
+  // Form sukses terisi
   emit("confirm", { ...form })
 }
+
+const paymentOptions = [
+  { value: "bank", label: "Transfer Bank", desc: "BCA, Mandiri, BNI, BRI" },
+  { value: "ewallet", label: "E-Wallet", desc: "GoPay, OVO, DANA, ShopeePay" },
+  { value: "card", label: "Kartu Kredit/Debit", desc: "Visa, Mastercard, JCB"},
+  { value: "cod", label: "Cash on Delivery", desc: "Bayar saat barang diterima" },
+]
 </script>
