@@ -1,38 +1,36 @@
 <template>
-  <div class="w-full flex justify-center px-4 pb-6 mt-5">
-    <div class="w-full max-w-6xl flex flex-col gap-4">
+  <div class="w-full flex justify-center">
+    <div class="w-full max-w-6xl p-4 flex flex-col gap-4 mt-6">
 
-      <div class="bg-white flex items-center gap-3 p-3 rounded-xl shadow">
-        <img src="../assets/image/search.png" alt="search" class="w-5 h-5 opacity-60" />
-        <input
-          type="text"
-          placeholder="Search instrument..."
-          class="flex-1 text-sm outline-none text-gray-700"
-        />
-      </div>
+      <!-- SEARCH -->
+      <input
+        v-model="search"
+        @input="emit('search', search)"
+        placeholder="Search instrument..."
+        class="w-full bg-white p-3 rounded-xl shadow text-sm outline-none"
+      />
 
-      <div class="flex gap-4">
-        <button
-          class="bg-white p-3 rounded-xl shadow flex items-center justify-center w-12"
-        >
-          <img src="../assets/image/filter.png" alt="filter" class="w-5 h-5 opacity-70" />
-        </button>
+      <!-- SORT -->
+      <select
+        v-model="sort"
+        @change="emit('sort', sort)"
+        class="w-full bg-white p-3 rounded-xl shadow text-sm outline-none"
+      >
+        <option value="none">all</option>
+        <option value="low-high">Harga Terendah → Tertinggi</option>
+        <option value="high-low">Harga Tertinggi → Terendah</option>
+      </select>
 
-        <button
-          class="bg-white p-3 rounded-xl shadow flex items-center justify-between flex-1"
-        >
-          <span class="text-gray-700 text-sm">All Category</span>
-          <img src="../assets/image/down.png" class="w-4 h-4 opacity-70" />
-        </button>
-
-        <button
-          class="bg-white p-3 rounded-xl shadow flex items-center justify-between flex-1"
-        >
-          <span class="text-gray-700 text-sm">Most Popular</span>
-          <img src="../assets/image/down.png" class="w-4 h-4 opacity-70" />
-        </button>
-
-      </div>
     </div>
   </div>
 </template>
+
+
+
+  <script setup>
+  import { ref } from "vue"
+  const emit = defineEmits(["search", "sort"])
+
+  const search = ref("")
+  const sort = ref("none")
+  </script>

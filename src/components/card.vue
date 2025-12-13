@@ -19,18 +19,19 @@
         </h3>
 
         <div class="flex justify-between items-center mt-3">
-          <p class="text-base font-bold text-gray-900">Rp {{ price }}</p>
+          <p class="text-base font-bold text-gray-900">Rp{{ formattedPrice }}</p>
           <span class="text-xs text-gray-500">Stok: {{ stock }}</span>
         </div>
 
+        <!-- button -->
         <button
           class="mt-4 w-full bg-emerald-500 hover:bg-emerald-600 text-white 
                 text-sm font-medium py-2 rounded-full"
-                @click="addtocart">
+          @click="emit('buy', { image, brand, title, price, stock })"
+        >
           Add to Cart
         </button>
       </div>
-
     </article>
   </template>
 
@@ -41,7 +42,7 @@
     image: String,
     brand: String,
     title: String,
-    price: String,
+    price: Number,
     stock: Number
   });
 
@@ -49,8 +50,14 @@
     new URL(`../assets/image/${props.image}`, import.meta.url).href
   );
 
+  const formattedPrice = computed(() =>
+  props.price.toLocaleString("id-ID")
+);
+
   function addtocart() {
   alert("Item berhasil ditambahkan ke keranjang!");
   }
 
-  </script>
+  const emit = defineEmits(["buy"])
+</script>
+

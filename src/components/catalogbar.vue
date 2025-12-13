@@ -1,17 +1,14 @@
 <template>
-  <div class="w-full max-w-6xl mx-auto flex justify-start -mt-8 relative">
+  <div class="w-full flex justify-center mt-6">
     <ul
-      class="bg-white inline-flex rounded-2xl shadow-lg p-4 gap-3 
+      class="w-full max-w-6xl bg-white inline-flex rounded-2xl shadow-lg p-4 gap-3
              overflow-x-auto scroll-smooth
              scrollbar-thin scrollbar-thumb-slate-400 
              scrollbar-track-slate-200"
     >
-      <li
-        v-for="category in categories"
-        :key="category"
-      >
+      <li v-for="category in categories" :key="category">
         <button
-          :class="active === category ? activeClass : defaultClass"
+          :class="props.active === category ? activeClass : defaultClass"
           @click="emit('update:active', category)"
         >
           {{ category }}
@@ -29,8 +26,8 @@ const props = defineProps({
   }
 })
 
-const active = props.active
 const emit = defineEmits(["update:active"])
+
 const categories = [
   "All",
   "Accessories",

@@ -1,73 +1,91 @@
 <template>
   <section class="px-8 py-20 bg-[#e6f7f4]">
-    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-xl border border-gray-200">
+    <div
+      v-for="order in orders"
+      :key="order.id"
+      class="max-w-4xl mx-auto bg-white shadow-xl rounded-xl
+             border border-gray-200 mb-10"
+    >
 
       <!-- HEADER -->
       <div class="flex justify-between items-center bg-gray-100 px-6 py-4 rounded-t-xl">
         <div class="flex items-center gap-3 text-gray-700 font-medium">
           <i class="fa-regular fa-calendar text-lg"></i>
-          <p>20 October 2025, at 12:25 PM</p>
+          <p>{{ order.date }}</p>
         </div>
 
         <div class="flex items-center gap-3">
           <span class="bg-yellow-300 text-gray-800 text-sm px-4 py-1 rounded-full">
-            Pending
+            {{ order.status }}
           </span>
-          <span class="text-gray-500 text-sm">#74erh9fs</span>
+          <span class="text-gray-500 text-sm">#{{ order.id }}</span>
         </div>
       </div>
 
-      <!-- BODY CONTENT -->
+      <!-- BODY -->
       <div class="px-6 py-6 space-y-6">
 
-        <!-- CUSTOMER + SHIPPING -->
+        <!-- CUSTOMER -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-          <!-- CUSTOMER INFO -->
-          <div class="flex flex-col">
-            <h3 class="font-semibold text-gray-700 mb-2">Customer Information</h3>
-
-            <p class="font-bold text-gray-900">Noel Gallagher</p>
-            <p class="text-gray-600 text-sm break-all">noelgallagher@gmail.com</p>
-            <p class="text-gray-600 text-sm">1234355-12-10</p>
+          <div>
+            <h3 class="font-semibold text-gray-700 mb-2">Customer</h3>
+            <p class="font-bold">{{ order.customer.name }}</p>
+            <p class="text-sm text-gray-600">{{ order.customer.email }}</p>
+            <p class="text-sm text-gray-600">{{ order.customer.phone }}</p>
           </div>
 
-          <!-- SHIPPING -->
-          <div class="flex flex-col">
-            <h3 class="font-semibold text-gray-700 mb-2">Shipping Address</h3>
-
-            <p class="text-gray-900 font-bold leading-tight">Indonesia</p>
-            <p class="text-gray-600 text-sm leading-tight mt-1 break-all">
-              Alamat: Jl. apaAjalah
+          <div>
+            <h3 class="font-semibold text-gray-700 mb-2">Shipping</h3>
+            <p class="text-sm text-gray-600">
+              {{ order.customer.address }}
             </p>
           </div>
-
         </div>
 
-        <hr class="border-gray-300" />
+        <hr />
 
-        <!-- ORDER DETAIL -->
+        <!-- ITEMS -->
         <div>
           <h3 class="font-semibold text-gray-700 mb-2">Order Detail</h3>
 
-          <div class="flex justify-between text-gray-900 font-medium">
-            <span>Gitar Mainan</span>
-            <span>Rp 25.000.000</span>
+          <div
+            v-for="item in order.items"
+            :key="item.name"
+            class="flex justify-between text-gray-900"
+          >
+            <span>{{ item.name }} (x{{ item.qty }})</span>
+            <span>Rp {{ format(item.price * item.qty) }}</span>
           </div>
-
-          <p class="text-gray-600 text-sm">Qty: 1</p>
         </div>
 
-        <hr class="border-gray-300" />
+        <hr />
 
         <!-- TOTAL -->
-        <div class="flex justify-between font-semibold text-gray-900">
-          <span>Total Amount</span>
-          <span>Rp 13.000.000</span>
+        <div class="flex justify-between font-semibold">
+          <span>Total</span>
+          <span>Rp {{ format(order.total) }}</span>
         </div>
 
       </div>
-
     </div>
+
+    <p
+      v-if="orders.length === 0"
+      class="text-center text-gray-500"
+    >
+      No order history yet
+    </p>
   </section>
 </template>
+
+<script setup>
+import { defineProps } from "vue"
+
+const props = defineProps({
+  orders: Array
+})
+
+function format(num) {
+  return num.toLocaleString("id-ID")
+}
+</script>
