@@ -120,9 +120,9 @@ const products = [
   category: "Drum",
 },
 {
-  image: "yamaharxv.webp",
+  image: "yamaharxv.jpg",
   brand: "Yamaha",
-  title: "RX-V Drum Set",
+  title: "Roland-V Drum Set",
   price: 8500000,
   stock: 3,
   category: "Drum",
@@ -180,23 +180,6 @@ const products = [
   stock: 3,
   category: "Wind Instrument",
 },
-{
-  image: "bachtr300h2.webp",
-  brand: "Bach",
-  title: "TR-300H2 Trumpet",
-  price: 8900000,
-  stock: 2,
-  category: "Wind Instrument",
-},
-{
-  image: "yamahaycl255.webp",
-  brand: "Yamaha",
-  title: "YCL-255 Clarinet",
-  price: 5100000,
-  stock: 5,
-  category: "Wind Instrument",
-},
-
 // ===== ACCESSORIES =====
 {
   image: "guitarpick.webp",
@@ -212,30 +195,6 @@ const products = [
   title: "Regular Slinky Strings",
   price: 120000,
   stock: 30,
-  category: "Accessories",
-},
-{
-  image: "keyboardstand.webp",
-  brand: "Hercules",
-  title: "KS120B Keyboard Stand",
-  price: 350000,
-  stock: 15,
-  category: "Accessories",
-},
-{
-  image: "drumsticks.webp",
-  brand: "Vic Firth",
-  title: "5A Drumsticks",
-  price: 95000,
-  stock: 40,
-  category: "Accessories",
-},
-{
-  image: "instrumentcable.webp",
-  brand: "Mogami",
-  title: "Gold Instrument Cable",
-  price: 450000,
-  stock: 10,
   category: "Accessories",
 }
 ]
